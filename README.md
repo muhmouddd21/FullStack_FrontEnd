@@ -3,6 +3,9 @@
 A dashboard application built with **React**, **TypeScript**, **Tanstack Query**, and **Redux Toolkit**.
 
 ---
+## Before Starting
+
+Be Sure you are in develop branch
 
 ## 🔧 Tech Stack
 
