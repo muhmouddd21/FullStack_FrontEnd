@@ -73,7 +73,7 @@ src/
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/muhmouddd21/FullStack_FrontEnd
-   cd Dashboard_Quest
+   cd FullStack_FrontEnd
 
    npm install
 
