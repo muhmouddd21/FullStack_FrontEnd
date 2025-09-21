@@ -46,24 +46,25 @@ A dashboard application built with **React**, **TypeScript**, **Tanstack Query**
 ---
 
 ## 📁 Folder Structure
+```
 src/
 ├── assets/ # Static assets and Lottie files
 ├── components/
 │ ├── common/ # Reusable components
-│ ├── dashboard/ # dashboard specific components
-│ ├── feedback/ # lottie handler
+│ ├── dashboard/ # Dashboard specific components
+│ ├── feedback/ # Lottie handler and feedback UI
 │ ├── forms/ # Form components
 │ └── modals/ # Modal components
 ├── hooks/ # Custom React hooks
 ├── layouts/ # Layout components
 ├── pages/ # Page components
-├── services/ # API service layer
+├── services/ # API service layer (Axios clients, interceptors, etc.)
 ├── store/ # Redux store configuration
 ├── styles/ # Global styles
-├── utils/ # Utility functions [repeted axios error]
+├── utils/ # Utility functions (Axios error handler, helpers, etc.)
 └── validations/ # Form validation schemas
 
-
+```
 ## 🛠 Setup Instructions
 
 1. **Clone the repository:**
@@ -76,7 +77,7 @@ src/
    Start development server:
    npm run dev
 
-  
+
    Authentication
 
 Base URL: http://localhost:3000/v1/api
