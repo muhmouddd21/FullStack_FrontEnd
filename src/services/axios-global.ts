@@ -2,7 +2,7 @@ import { AppStore } from "@store/index";
 import axios from "axios";
 import type { InternalAxiosRequestConfig } from "axios";
 import type { AxiosError } from "axios";
-let store: AppStore; // Reference to the Redux store
+let store: AppStore; // Reference to the Redux store 
 
 export const setStore = (s: AppStore) => {
   store = s;
@@ -34,16 +34,15 @@ const responseInterceptor = async (error: AxiosError) => {
   if (error.response?.status === 401 && 
     originalRequest.url !== loginUrl &&
     !originalRequest._retry && 
-    originalRequest.url !== "/users/fresh") {
+    originalRequest.url !== "/auth/refresh") {
 
     
     originalRequest._retry = true; // Mark that we are attempting a retry
     
     try {
-      const refreshResponse = await api.post("/users/fresh");
+      const refreshResponse = await api.post("/auth/refresh");
       
-      // Assuming your backend returns { accessToken: '...' }
-      // In your Thunk, you used response.data, but here you might need to access the property directly
+            // In your Thunk, you used response.data, but here you might need to access the property directly
       const newAccessToken = refreshResponse.data.accessToken; 
 
       // Dispatch the action to update the token in Redux
