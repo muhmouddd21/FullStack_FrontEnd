@@ -84,7 +84,7 @@ const UserLayout = () => {
               position: "fixed",
               top: "58px",
               bottom: 0,
-              zIndex: 1060,
+              zIndex: 999,
               transform: isMobile 
                 ? `translateX(${sidebarOpen ? '0' : '-100%'})` 
                 : 'translateX(0)',
