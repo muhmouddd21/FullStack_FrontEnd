@@ -1,5 +1,10 @@
+import { LottieHandler } from "@components/feedback";
 import {  UserLayout } from "@layouts/index";
 import { Error,  Login, Logout, Register,Profile, TasksDashBoard } from "@pages/index";
+import TaskDetails from "@pages/TaskDetails/TaskDetails";
+import ActCheckAuth from "@store/Auth/Actions/ActCheckAuth";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { useEffect } from "react";
 
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -38,15 +43,31 @@ const router = createBrowserRouter([
                 path:'tasks',
                 element:<TasksDashBoard />
             },
-            // {
-            //     path:'todo',
-            //     element: <TodoDetails />,
-            // }
+            {
+                path:'task',
+                element: <TaskDetails />,
+            }
         ],
     },
 ]);
 
 function AppRouter() {
+  const dispatch = useAppDispatch();
+  const isInitialized = useAppSelector(
+    (state) => state.Authslice.isInitialized
+  );
+
+
+    useEffect(() => {
+        dispatch(ActCheckAuth());
+    }, [dispatch]);
+
+
+    if (!isInitialized) {
+    return <LottieHandler type="loading"/>;
+  }
+
+
 
 return <RouterProvider router={router} />;
   

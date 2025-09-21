@@ -1,11 +1,19 @@
 export type TLoading ="idle" | "pending" | "succeeded" | "failed"
 
-export type TStatusType = "all"|"Completed" | "Pending";
-export interface TTodo {
-  userId: number;
+export type TStatusType = "All"|"Completed" | "Pending" | "In progress";
+export interface TTask {
+  user_id: number;
   id: number;
   title: string;
-  completed: boolean;
+  description:string;
+  status:TStatusType;
+  
+}
+export interface getTasksResponse{
+  total:number,
+  page:number,
+  limit:number,
+  data:TTask[]
 }
 
 export interface ColumnDefinition<T> {
