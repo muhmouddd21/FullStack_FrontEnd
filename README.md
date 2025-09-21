@@ -1,4 +1,4 @@
-# Dashboard Quest
+# Dashboard Task
 
 A dashboard application built with **React**, **TypeScript**, **Tanstack Query**, and **Redux Toolkit**.
 
